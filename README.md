@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/rednavis/maas-sd.svg?branch=master)](https://travis-ci.com/rednavis/maas-sd)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/72614d9beef84d91b6825afa10c7074b)](https://www.codacy.com/gh/rednavis/maas-sd?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rednavis/maas-sd&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.com/rednavis/maas-auth.svg?branch=master)](https://travis-ci.com/rednavis/maas-auth)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fa83a31b0342405abde873124f3b3074)](https://www.codacy.com/gh/rednavis/maas-auth?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rednavis/maas-auth&amp;utm_campaign=Badge_Grade)
 [![codecov](https://codecov.io/gh/rednavis/maas-sd/branch/master/graph/badge.svg)](https://codecov.io/gh/rednavis/maas-sd)
 
 # maas-auth
