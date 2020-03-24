@@ -1,0 +1,62 @@
+plugins {
+    id 'com.github.ben-manes.versions' version '0.28.0'
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'com.google.cloud.tools.jib' version '2.1.0'
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'project-report'
+apply plugin: 'jacoco'
+apply plugin: 'io.spring.dependency-management'
+
+apply from: "${rootDir}/gradle/java.gradle"
+apply from: "${rootDir}/gradle/checkstyle.gradle"
+
+ext {
+    springCloudVersion = 'Hoxton.SR3'
+    springBootVersion = '2.2.5.RELEASE'
+    jupiterVersion = '5.6.1'
+}
+
+configurations.all {
+    exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencyManagement {
+    dependencies {
+        //Server
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-starter-parent:${springCloudVersion}"
+        }
+
+        //Test
+        dependency "org.junit.jupiter:junit-jupiter:${jupiterVersion}"
+        dependency "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        xml.destination file("${buildDir}/reports/jacoco/report.xml")
+        html.enabled false
+        csv.enabled false
+    }
+}
+
+wrapper {
+    gradleVersion = "6.2.2"
+}
