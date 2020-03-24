@@ -1,4 +1,4 @@
-package com.rednavis.sd;
+package com.rednavis.auth;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -9,7 +9,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-class MaasSdApplicationTest {
+class MaasAuthApplicationTest {
 
   @Test
   public void contextLoads() {
